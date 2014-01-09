@@ -1,0 +1,26 @@
+# See manual:
+#     * http://www.cmake.org/cmake/help/v2.8.12/cmake.html#module:CMakePackageConfigHelpers
+
+@PACKAGE_INIT@
+
+include("@PACKAGE_CONFIG_INSTALL_DESTINATION@/FooTargets.cmake")
+
+# Use release variant library in default case;
+# See CMakeLists.txt's `target_compile_definitions` command:
+#    * Debug: -DFOO_DEBUG=1 use IMPORTED_LOCATION_DEBUG: libfood.a
+#    * Release: -DFOO_DEBUG=0 use IMPORTED_LOCATION_RELEASE: libfoo.a
+#    * other: -DFOO_DEBUG=0 use IMPORTED_LOCATION (release value): libfoo.a
+#    * no config: -DFOO_DEBUG=0 use IMPORTED_LOCATION (release value): libfoo.a
+get_target_property(
+    _imported_location_release Foo::foo IMPORTED_LOCATION_RELEASE
+)
+if(NOT _imported_location_release)
+  message(FATAL_ERROR "Release target Foo::foo not installed")
+endif()
+set_target_properties(
+    Foo::foo
+    PROPERTIES
+    IMPORTED_LOCATION
+    "${_imported_location_release}"
+)
+unset(_imported_location_release)

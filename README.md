@@ -29,7 +29,7 @@ Install the project...
 ```
 
 Note that:
-* target `foo` has different names: `libfoo.a` and `libfood.a`
+* target `foo` output has different names: `libfoo.a` and `libfood.a`
 * header files is equal for both variants
 * cmake-config files `FooConfig.cmake`, `FooConfigVersion.cmake` and `FooTargets.cmake` is equal for both variants
 * `FooTargets-release.cmake` set `Release` imported target properties, e.g. `IMPORTED_LOCATION_RELEASE`

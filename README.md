@@ -84,3 +84,7 @@ The following configuration files were considered but not accepted:
 
     /.../_install/lib/cmake/Foo/FooConfig.cmake, version: 1.2.3
 ```
+
+### UML sequence diagram
+
+![uml](https://raw.github.com/forexample/package-example/master/wiki/FindPackage.UML-sequence.png)

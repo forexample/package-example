@@ -18,6 +18,7 @@ set(INCLUDE_INSTALL_DESTINATION include)
 
 # Create target
 add_library(foo foo.cpp)
+add_library(baz baz.cpp)
 set(FOO_VERSION 1.2.3)
 
 # Values:
@@ -27,6 +28,7 @@ set(FOO_VERSION 1.2.3)
 #     * no config: -DFOO_DEBUG=0
 # see `FooConfig.cmake.in` for default library location
 target_compile_definitions(foo PUBLIC "FOO_DEBUG=$<CONFIG:Debug>")
+target_compile_definitions(baz PUBLIC "BAZ_DEBUG=$<CONFIG:Debug>")
 
 target_include_directories(
     foo
@@ -34,6 +36,16 @@ target_include_directories(
         "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DESTINATION}>"
         "$<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/Source/headers>"
 )
+
+target_include_directories(
+    baz
+    PUBLIC
+        "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DESTINATION}>"
+        "$<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/Source/headers>"
+)
+
+add_library(Foo::baz ALIAS baz)
+target_link_libraries(foo PUBLIC Foo::baz)
 
 # Target config
 include(CMakePackageConfigHelpers)
@@ -61,7 +73,9 @@ install(
     FILES "${foo_config}" "${foo_config_version}"
     DESTINATION ${CONFIG_INSTALL_DESTINATION}
 )
-install(TARGETS foo DESTINATION ${LIB_INSTALL_DESTINATION} EXPORT FooTargets)
+install(
+    TARGETS foo baz DESTINATION ${LIB_INSTALL_DESTINATION} EXPORT FooTargets
+)
 install(
     FILES "Source/headers/Foo.hpp" DESTINATION ${INCLUDE_INSTALL_DESTINATION}
 )

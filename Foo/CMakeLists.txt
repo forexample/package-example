@@ -30,18 +30,18 @@ set(FOO_VERSION 1.2.3)
 target_compile_definitions(foo PUBLIC "FOO_DEBUG=$<CONFIG:Debug>")
 target_compile_definitions(baz PUBLIC "BAZ_DEBUG=$<CONFIG:Debug>")
 
+include_directories("Source/headers")
+
 target_include_directories(
     foo
     PUBLIC
-        "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DESTINATION}>"
-        "$<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/Source/headers>"
+    "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DESTINATION}>"
 )
 
 target_include_directories(
     baz
     PUBLIC
-        "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DESTINATION}>"
-        "$<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/Source/headers>"
+    "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DESTINATION}>"
 )
 
 add_library(Foo::baz ALIAS baz)

@@ -11,16 +11,27 @@ include("@PACKAGE_CONFIG_INSTALL_DESTINATION@/FooTargets.cmake")
 #    * Release: -DFOO_DEBUG=0 use IMPORTED_LOCATION_RELEASE: libfoo.a
 #    * other: -DFOO_DEBUG=0 use IMPORTED_LOCATION (release value): libfoo.a
 #    * no config: -DFOO_DEBUG=0 use IMPORTED_LOCATION (release value): libfoo.a
-get_target_property(
-    _imported_location_release Foo::foo IMPORTED_LOCATION_RELEASE
-)
-if(NOT _imported_location_release)
-  message(FATAL_ERROR "Release target Foo::foo not installed")
-endif()
-set_target_properties(
-    Foo::foo
-    PROPERTIES
-    IMPORTED_LOCATION
-    "${_imported_location_release}"
-)
-unset(_imported_location_release)
+function(_apply_release_imported_config_as_default tgt)
+  get_target_property(location ${tgt} IMPORTED_LOCATION_RELEASE)
+  get_target_property(link ${tgt} IMPORTED_LINK_INTERFACE_LIBRARIES_RELEASE)
+
+  if(NOT location)
+    message(FATAL_ERROR "Release target `${tgt}` not installed")
+  endif()
+
+  set_target_properties(
+      ${tgt}
+      PROPERTIES
+      IMPORTED_LOCATION "${location}"
+  )
+  if(link)
+    set_target_properties(
+        ${tgt}
+        PROPERTIES
+        IMPORTED_LINK_INTERFACE_LIBRARIES "${link}"
+    )
+  endif()
+endfunction()
+
+_apply_release_imported_config_as_default(Foo::foo)
+_apply_release_imported_config_as_default(Foo::baz)

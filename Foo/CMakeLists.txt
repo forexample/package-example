@@ -44,8 +44,7 @@ target_include_directories(
     "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DESTINATION}>"
 )
 
-add_library(Foo::baz ALIAS baz)
-target_link_libraries(foo PUBLIC Foo::baz)
+target_link_libraries(foo PUBLIC baz)
 
 # Target config
 include(CMakePackageConfigHelpers)

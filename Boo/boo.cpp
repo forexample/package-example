@@ -4,7 +4,7 @@
 
 int foo();
 
-int main() {
+int boo() {
   std::cout << "foo: " << foo() << std::endl;
-  return EXIT_SUCCESS;
+  return foo();
 }

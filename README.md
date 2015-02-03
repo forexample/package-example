@@ -1,6 +1,6 @@
 ### Install Foo
 
-Install project `Foo` in `Debug` and `Release` variants:
+Install project `Foo` in `Debug` and `Release` variants (`Makefile` generator):
 ``` bash
 > cmake -HFoo -B_builds/Foo-debug -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX="`pwd`/_install"
 > cmake --build _builds/Foo-debug --target install
@@ -10,6 +10,7 @@ Install the project...
 -- Installing: /.../_install/lib/cmake/Foo/FooConfig.cmake
 -- Installing: /.../_install/lib/cmake/Foo/FooConfigVersion.cmake
 -- Installing: /.../_install/lib/libfood.a
+-- Installing: /.../_install/lib/libbazd.a
 -- Installing: /.../_install/include/Foo.hpp
 -- Installing: /.../_install/lib/cmake/Foo/FooTargets.cmake
 -- Installing: /.../_install/lib/cmake/Foo/FooTargets-debug.cmake
@@ -23,13 +24,14 @@ Install the project...
 -- Installing: /.../_install/lib/cmake/Foo/FooConfig.cmake
 -- Installing: /.../_install/lib/cmake/Foo/FooConfigVersion.cmake
 -- Installing: /.../_install/lib/libfoo.a
+-- Installing: /.../_install/lib/libbaz.a
 -- Up-to-date: /.../_install/include/Foo.hpp
 -- Installing: /.../_install/lib/cmake/Foo/FooTargets.cmake
 -- Installing: /.../_install/lib/cmake/Foo/FooTargets-release.cmake
 ```
 
 Note that:
-* target `foo` output has different names: `libfoo.a` and `libfood.a`
+* library target `foo` for different build types has different names: `libfoo.a` and `libfood.a`
 * header files is equal for both variants
 * cmake-config files `FooConfig.cmake`, `FooConfigVersion.cmake` and `FooTargets.cmake` is equal for both variants
 * `FooTargets-release.cmake` set `Release` imported target properties, e.g. `IMPORTED_LOCATION_RELEASE`
@@ -56,10 +58,10 @@ before every configure):
 
 ```bash
 > cat Boo/CMakeLists.txt 
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 2.8.5)
 project(Boo)
 
-find_package(Foo CONFIG REQUIRED)
+find_package(Foo CONFIG REQUIRED NO_CMAKE_BUILDS_PATH)
 
 add_executable(boo boo.cpp)
 target_link_libraries(boo Foo::foo)

@@ -8,8 +8,8 @@ import sys
 def do_call(args):
   oneline = ''
   for i in args:
-    oneline += '"{}"'.format(i)
-  print('[{}]> {}'.format(os.getcwd(), oneline))
+    oneline += ' "{}"'.format(i)
+  print('[{}]>{}'.format(os.getcwd(), oneline))
   try:
     subprocess.check_call(args)
   except subprocess.CalledProcessError as error:

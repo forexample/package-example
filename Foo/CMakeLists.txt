@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.5)
+cmake_minimum_required(VERSION 2.8.11) # target_compile_definitions
 project(Foo)
 
 # If library postfix will be empty,

@@ -15,13 +15,12 @@
   <graph edgedefault="directed" id="G">
     <data key="d7"/>
     <node id="n0">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="184.0" width="43.0" x="266.5" y="-83.0"/>
           <y:Fill color="#000080" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.48828125" modelName="custom" rotationAngle="270.0" textColor="#FFFFFF" visible="true" width="103.96875" x="11.255859375" y="40.015625">CMakeLists.txt<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" modelName="custom" rotationAngle="270.0" textColor="#FFFFFF" visible="true" width="95.7998046875" x="10.92431640625" y="44.10009765625">CMakeLists.txt<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -33,7 +32,6 @@
       </data>
     </node>
     <node id="n1">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="184.0" width="12.0" x="282.0" y="165.5"/>
@@ -52,7 +50,6 @@
       </data>
     </node>
     <node id="n2">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="65.0" width="12.0" x="527.25" y="284.5"/>
@@ -71,13 +68,12 @@
       </data>
     </node>
     <node id="n3">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="184.0" width="43.0" x="266.5" y="392.0"/>
           <y:Fill color="#000080" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.48828125" modelName="custom" rotationAngle="270.0" textColor="#FFFFFF" visible="true" width="103.96875" x="11.255859375" y="40.015625">CMakeLists.txt<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" modelName="custom" rotationAngle="270.0" textColor="#FFFFFF" visible="true" width="95.7998046875" x="10.92431640625" y="44.10009765625">CMakeLists.txt<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -89,13 +85,12 @@
       </data>
     </node>
     <node id="n4">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="184.0" width="43.0" x="348.25" y="-83.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.48828125" modelName="custom" rotationAngle="270.0" textColor="#000000" visible="true" width="173.1416015625" x="11.255859375" y="5.42919921875">FooConfigVersion.cmake<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" modelName="custom" rotationAngle="270.0" textColor="#000000" visible="true" width="161.185546875" x="10.92431640625" y="11.4072265625">FooConfigVersion.cmake<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -107,13 +102,12 @@
       </data>
     </node>
     <node id="n5">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="184.0" width="43.0" x="511.75" y="-83.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.48828125" modelName="custom" rotationAngle="270.0" textColor="#000000" visible="true" width="128.3046875" x="11.255859375" y="27.84765625">FooTargets.cmake<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" modelName="custom" rotationAngle="270.0" textColor="#000000" visible="true" width="120.7099609375" x="10.92431640625" y="31.64501953125">FooTargets.cmake<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -125,13 +119,12 @@
       </data>
     </node>
     <node id="n6">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="184.0" width="43.0" x="430.0" y="-83.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.48828125" modelName="custom" rotationAngle="270.0" textColor="#000000" visible="true" width="121.98828125" x="11.255859375" y="31.005859375">FooConfig.cmake<y:LabelModel>
+          <y:BorderStyle color="#FF0000" type="line" width="2.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" modelName="custom" rotationAngle="270.0" textColor="#000000" visible="true" width="113.716796875" x="10.92431640625" y="35.1416015625">FooConfig.cmake<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -143,13 +136,12 @@
       </data>
     </node>
     <node id="n7">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="184.0" width="43.0" x="593.5" y="-83.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.48828125" modelName="custom" rotationAngle="270.0" textColor="#000000" visible="true" width="184.4482421875" x="11.255859375" y="-0.22412109375">FooTargets-release.cmake<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" modelName="custom" rotationAngle="270.0" textColor="#000000" visible="true" width="171.2890625" x="10.92431640625" y="6.35546875">FooTargets-release.cmake<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -161,13 +153,12 @@
       </data>
     </node>
     <node id="n8">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="184.0" width="43.0" x="675.25" y="-83.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.48828125" modelName="custom" rotationAngle="270.0" textColor="#000000" visible="true" width="179.24609375" x="11.255859375" y="2.376953125">FooTargets-debug.cmake<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" modelName="custom" rotationAngle="270.0" textColor="#000000" visible="true" width="164.302734375" x="10.92431640625" y="9.8486328125">FooTargets-debug.cmake<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -179,13 +170,12 @@
       </data>
     </node>
     <node id="n9">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="184.0" width="43.0" x="348.25" y="392.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.48828125" modelName="custom" rotationAngle="270.0" textColor="#000000" visible="true" width="173.1416015625" x="11.255859375" y="5.42919921875">FooConfigVersion.cmake<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" modelName="custom" rotationAngle="270.0" textColor="#000000" visible="true" width="161.185546875" x="10.92431640625" y="11.4072265625">FooConfigVersion.cmake<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -197,13 +187,12 @@
       </data>
     </node>
     <node id="n10">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="184.0" width="43.0" x="430.0" y="392.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.48828125" modelName="custom" rotationAngle="270.0" textColor="#000000" visible="true" width="121.98828125" x="11.255859375" y="31.005859375">FooConfig.cmake<y:LabelModel>
+          <y:BorderStyle color="#FF0000" type="line" width="2.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" modelName="custom" rotationAngle="270.0" textColor="#000000" visible="true" width="113.716796875" x="10.92431640625" y="35.1416015625">FooConfig.cmake<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -215,13 +204,12 @@
       </data>
     </node>
     <node id="n11">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="184.0" width="43.0" x="511.75" y="392.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.48828125" modelName="custom" rotationAngle="270.0" textColor="#000000" visible="true" width="128.3046875" x="11.255859375" y="27.84765625">FooTargets.cmake<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" modelName="custom" rotationAngle="270.0" textColor="#000000" visible="true" width="120.7099609375" x="10.92431640625" y="31.64501953125">FooTargets.cmake<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -233,13 +221,12 @@
       </data>
     </node>
     <node id="n12">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="184.0" width="43.0" x="593.5" y="392.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.48828125" modelName="custom" rotationAngle="270.0" textColor="#000000" visible="true" width="184.4482421875" x="11.255859375" y="-0.22412109375">FooTargets-release.cmake<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" modelName="custom" rotationAngle="270.0" textColor="#000000" visible="true" width="171.2890625" x="10.92431640625" y="6.35546875">FooTargets-release.cmake<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -251,13 +238,12 @@
       </data>
     </node>
     <node id="n13">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="184.0" width="43.0" x="675.25" y="392.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.48828125" modelName="custom" rotationAngle="270.0" textColor="#000000" visible="true" width="179.24609375" x="11.255859375" y="2.376953125">FooTargets-debug.cmake<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" modelName="custom" rotationAngle="270.0" textColor="#000000" visible="true" width="164.302734375" x="10.92431640625" y="9.8486328125">FooTargets-debug.cmake<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -269,7 +255,6 @@
       </data>
     </node>
     <node id="n14">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="26.0" width="12.0" x="609.0" y="284.5"/>
@@ -288,7 +273,6 @@
       </data>
     </node>
     <node id="n15">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="26.0" width="12.0" x="690.75" y="323.5"/>
@@ -307,12 +291,11 @@
       </data>
     </node>
     <node id="n16">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="116.0" width="12.0" x="445.5" y="233.5"/>
           <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:BorderStyle color="#FF0000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="4.0" y="56.0">
             <y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
@@ -326,7 +309,6 @@
       </data>
     </node>
     <node id="n17">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="26.0" width="12.0" x="363.75" y="165.5"/>
@@ -346,13 +328,12 @@
     </node>
     <node id="n18">
       <data key="d4"/>
-      <data key="d5"/>
       <data key="d6">
         <y:UMLNoteNode>
           <y:Geometry height="46.80787037037038" width="208.50694444444446" x="38.1996527777776" y="92.48495370370367"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#808080" type="dashed" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#000000" visible="true" width="188.798828125" x="9.854058159722229" y="7.2711226851851904">Included automatically
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" modelName="custom" textColor="#000000" visible="true" width="166.73828125" x="20.88433159722223" y="6.7027633101851904">Included automatically
 from `find_package` command<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
@@ -365,14 +346,12 @@ from `find_package` command<y:LabelModel>
     </node>
     <node id="n19">
       <data key="d4"/>
-      <data key="d5"/>
       <data key="d6">
         <y:UMLNoteNode>
-          <y:Geometry height="52.80787037037038" width="307.50694444444446" x="453.39930555555515" y="-190.03009259259267"/>
+          <y:Geometry height="52.80787037037038" width="174.078125" x="520.1137152777774" y="-190.03009259259267"/>
           <y:Fill hasColor="false" transparent="false"/>
-          <y:BorderStyle color="#808080" type="dashed" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#000000" visible="true" width="291.71875" x="7.894097222222172" y="10.27112268518519">File generated from `FooConfig.cmake.in`
-using `configure_package_config_file` command<y:LabelModel>
+          <y:BorderStyle color="#FF0000" type="dashed" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" textColor="#000000" visible="true" width="164.078125" x="5.0" y="17.05334924768519">Written and installed manually<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -384,13 +363,12 @@ using `configure_package_config_file` command<y:LabelModel>
     </node>
     <node id="n20">
       <data key="d4"/>
-      <data key="d5"/>
       <data key="d6">
         <y:UMLNoteNode>
           <y:Geometry height="37.0" width="261.50694444444446" x="733.75" y="131.0"/>
           <y:Fill hasColor="false" transparent="false"/>
-          <y:BorderStyle color="#808080" type="dashed" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.1328125" modelName="custom" textColor="#000000" visible="true" width="226.234375" x="17.63628472222217" y="9.43359375">This file need to be included manually<y:LabelModel>
+          <y:BorderStyle color="#FF0000" type="dashed" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" textColor="#000000" visible="true" width="204.7890625" x="28.35894097222217" y="9.1494140625">This file need to be included manually<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -402,13 +380,12 @@ using `configure_package_config_file` command<y:LabelModel>
     </node>
     <node id="n21">
       <data key="d4"/>
-      <data key="d5"/>
       <data key="d6">
         <y:UMLNoteNode>
           <y:Geometry height="37.0" width="327.75694444444446" x="220.49305555555554" y="606.0"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#808080" type="dashed" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.1328125" modelName="custom" textColor="#000000" visible="true" width="319.662109375" x="4.0474175347222285" y="9.43359375">This files generated by `install(EXPORT ...)` command<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" textColor="#000000" visible="true" width="293.4296875" x="17.16362847222223" y="9.1494140625">This files generated by `install(EXPORT ...)` command<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -420,13 +397,12 @@ using `configure_package_config_file` command<y:LabelModel>
     </node>
     <node id="n22">
       <data key="d4"/>
-      <data key="d5"/>
       <data key="d6">
         <y:UMLNoteNode>
           <y:Geometry height="37.0" width="307.50694444444457" x="733.75" y="215.88888888888886"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#808080" type="dashed" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.1328125" modelName="custom" textColor="#000000" visible="true" width="296.376953125" x="5.564995659722285" y="9.43359375">`FooTarget.cmake` include variants automatically<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" textColor="#000000" visible="true" width="266.107421875" x="20.699761284722285" y="9.1494140625">`FooTarget.cmake` include variants automatically<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -438,13 +414,12 @@ using `configure_package_config_file` command<y:LabelModel>
     </node>
     <node id="n23">
       <data key="d4"/>
-      <data key="d5"/>
       <data key="d6">
         <y:UMLNoteNode>
           <y:Geometry height="65.0" width="228.50694444444446" x="732.75" y="362.5"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#808080" type="dashed" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="46.3984375" modelName="custom" textColor="#000000" visible="true" width="207.671875" x="10.417534722222172" y="9.30078125">Import library `Foo::foo`, update
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="48.103515625" modelName="custom" textColor="#000000" visible="true" width="220.03515625" x="4.235894097222172" y="8.4482421875">Import library `Foo::foo`, update
 INTERFACE_COMPILE_DEFINITIONS,
 INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
@@ -458,13 +433,12 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
     </node>
     <node id="n24">
       <data key="d4"/>
-      <data key="d5"/>
       <data key="d6">
         <y:UMLNoteNode>
           <y:Geometry height="26.0" width="312.50694444444457" x="779.5" y="284.5"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#808080" type="dashed" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.1328125" modelName="custom" textColor="#000000" visible="true" width="294.232421875" x="9.137261284722285" y="3.93359375">set IMPORTED_LOCATION_RELEASE for `Foo::foo`<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" textColor="#000000" visible="true" width="289.416015625" x="11.545464409722285" y="3.6494140625">set IMPORTED_LOCATION_RELEASE for `Foo::foo`<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -476,13 +450,12 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
     </node>
     <node id="n25">
       <data key="d4"/>
-      <data key="d5"/>
       <data key="d6">
         <y:UMLNoteNode>
           <y:Geometry height="26.0" width="312.50694444444457" x="779.5" y="323.5"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#808080" type="dashed" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.1328125" modelName="custom" textColor="#000000" visible="true" width="285.373046875" x="13.566948784722285" y="3.93359375">set IMPORTED_LOCATION_DEBUG for `Foo::foo`<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" textColor="#000000" visible="true" width="276.73046875" x="17.888237847222285" y="3.6494140625">set IMPORTED_LOCATION_DEBUG for `Foo::foo`<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -494,13 +467,12 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
     </node>
     <node id="n26">
       <data key="d4"/>
-      <data key="d5"/>
       <data key="d6">
         <y:UMLNoteNode>
           <y:Geometry height="46.80787037037038" width="203.50694444444446" x="186.24652777777777" y="-190.03009259259267"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#808080" type="dashed" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#000000" visible="true" width="209.833984375" x="-3.1635199652777715" y="7.2711226851851904">File generated by
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" modelName="custom" textColor="#000000" visible="true" width="191.4296875" x="6.0386284722222285" y="6.7027633101851904">File generated by
 `write_basic_package_version_file`<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
@@ -512,7 +484,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </node>
     <edge id="e0" source="n0" target="n1">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="-92.0"/>
@@ -523,7 +494,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e1" source="n1" target="n3">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="-92.00000000000001"/>
@@ -534,7 +504,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e2" source="n4" target="n17">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -545,18 +514,16 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e3" source="n6" target="n16">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
-          <y:LineStyle color="#000000" type="dashed" width="1.0"/>
+          <y:LineStyle color="#FF0000" type="dashed" width="1.0"/>
           <y:Arrows source="none" target="none"/>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
     </edge>
     <edge id="e4" source="n5" target="n2">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -567,7 +534,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e5" source="n7" target="n14">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -578,7 +544,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e6" source="n8" target="n15">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -589,7 +554,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e7" source="n15" target="n13">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -600,7 +564,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e8" source="n14" target="n12">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -611,7 +574,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e9" source="n2" target="n11">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -622,18 +584,16 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e10" source="n16" target="n10">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
-          <y:LineStyle color="#000000" type="dashed" width="1.0"/>
+          <y:LineStyle color="#FF0000" type="dashed" width="1.0"/>
           <y:Arrows source="none" target="none"/>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
     </edge>
     <edge id="e11" source="n17" target="n9">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -644,7 +604,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e12" source="n1" target="n17">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="-92.0" tx="0.0" ty="-13.0"/>
@@ -655,7 +614,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e13" source="n17" target="n1">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="13.0" tx="5.955946180555202" ty="-66.0"/>
@@ -666,7 +624,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e14" source="n1" target="n16">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="5.9559461805553156" sy="-24.0" tx="0.0" ty="-58.0"/>
@@ -677,7 +634,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e15" source="n16" target="n2">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="5.957826967592268" sy="-7.0" tx="0.0" ty="-32.5"/>
@@ -688,7 +644,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e16" source="n2" target="n14">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="-32.5" tx="0.0" ty="-13.0"/>
@@ -699,7 +654,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e17" source="n2" target="n15">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="5.9678096064811825" sy="6.5" tx="0.0" ty="-13.0"/>
@@ -710,7 +664,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e18" source="n15" target="n2">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="13.0" tx="0.0" ty="32.5"/>
@@ -721,7 +674,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e19" source="n14" target="n2">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="13.0" tx="6.003978587962706" ty="-6.5"/>
@@ -732,7 +684,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e20" source="n2" target="n16">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="32.5" tx="0.0" ty="58.0"/>
@@ -743,7 +694,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e21" source="n16" target="n1">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="58.0" tx="0.0" ty="92.0"/>
@@ -754,7 +704,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e22" source="n18" target="n17">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -767,7 +716,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e23" source="n18" target="n16">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -780,33 +728,30 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e24" source="n19" target="n6">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
             <y:Point x="467.41203703703684" y="-121.10185185185162"/>
           </y:Path>
-          <y:LineStyle color="#999999" type="dashed" width="1.0"/>
+          <y:LineStyle color="#FF0000" type="dashed" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
     </edge>
     <edge id="e25" source="n20" target="n2">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
             <y:Point x="558.4120370370368" y="149.19212962962962"/>
           </y:Path>
-          <y:LineStyle color="#999999" type="dashed" width="1.0"/>
+          <y:LineStyle color="#FF0000" type="dashed" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
     </edge>
     <edge id="e26" source="n21" target="n11">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="131.04050925925907" sy="-13.10185185185162" tx="0.0" ty="0.0"/>
@@ -817,7 +762,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e27" source="n22" target="n14">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -830,7 +774,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e28" source="n22" target="n15">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -843,7 +786,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e29" source="n23" target="n2">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -856,7 +798,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e30" source="n24" target="n14">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -867,7 +808,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e31" source="n25" target="n15">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -878,7 +818,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e32" source="n26" target="n4">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -891,7 +830,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e33" source="n21" target="n12">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -904,7 +842,6 @@ INTERFACE_INCLUDE_DIRECTORIES<y:LabelModel>
       </data>
     </edge>
     <edge id="e34" source="n21" target="n13">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">

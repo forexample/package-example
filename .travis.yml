@@ -8,4 +8,4 @@ install:
     - sudo apt-get install cmake
 
 script:
-    - ./jenkins.py
+    - python ./jenkins.py

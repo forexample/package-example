@@ -5,7 +5,7 @@
 
 @PACKAGE_INIT@
 
-include("@PACKAGE_CONFIG_INSTALL_DESTINATION@/FooTargets.cmake")
+include("@PACKAGE_CFG_DEST@/FooTargets.cmake")
 
 # Use release variant library in default case;
 # See CMakeLists.txt's `target_compile_definitions` command:

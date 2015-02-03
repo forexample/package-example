@@ -12,11 +12,11 @@ endif()
 #     * <prefix>/lib/cmake/Foo
 #     * <prefix>/lib/
 #     * <prefix>/include/
-set(CONFIG_INSTALL_DESTINATION lib/cmake/Foo)
-set(LIB_INSTALL_DESTINATION lib)
-set(INCLUDE_INSTALL_DESTINATION include)
+set(CFG_DEST lib/cmake/Foo)
+set(LIB_DEST lib)
+set(INCL_DEST include)
 
-# Create target
+# Create targets
 add_library(foo foo.cpp)
 add_library(baz baz.cpp)
 set(FOO_VERSION 1.2.3)
@@ -32,17 +32,7 @@ target_compile_definitions(baz PUBLIC "BAZ_DEBUG=$<CONFIG:Debug>")
 
 include_directories("Source/headers")
 
-target_include_directories(
-    foo
-    PUBLIC
-    "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DESTINATION}>"
-)
-
-target_include_directories(
-    baz
-    PUBLIC
-    "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DESTINATION}>"
-)
+target_include_directories(baz PUBLIC "$<INSTALL_INTERFACE:${INCL_DEST}>")
 
 target_link_libraries(foo PUBLIC baz)
 
@@ -52,13 +42,13 @@ include(CMakePackageConfigHelpers)
 set(foo_config "${CMAKE_CURRENT_BINARY_DIR}/FooConfig.cmake")
 set(foo_config_version "${CMAKE_CURRENT_BINARY_DIR}/FooConfigVersion.cmake")
 
-# CONFIG_INSTALL_DESTINATION can be used
-# as PACKAGE_CONFIG_INSTALL_DESTINATION in FooConfig.cmake.in
+# CFG_DEST can be used
+# as PACKAGE_CFG_DEST in FooConfig.cmake.in
 configure_package_config_file(
     "./FooConfig.cmake.in"
     "${foo_config}"
-    INSTALL_DESTINATION ${CONFIG_INSTALL_DESTINATION}
-    PATH_VARS CONFIG_INSTALL_DESTINATION
+    INSTALL_DESTINATION ${CFG_DEST}
+    PATH_VARS CFG_DEST
 )
 
 write_basic_package_version_file(
@@ -68,16 +58,7 @@ write_basic_package_version_file(
 )
 
 # Install targets and configs
-install(
-    FILES "${foo_config}" "${foo_config_version}"
-    DESTINATION ${CONFIG_INSTALL_DESTINATION}
-)
-install(
-    TARGETS foo baz DESTINATION ${LIB_INSTALL_DESTINATION} EXPORT FooTargets
-)
-install(
-    FILES "Source/headers/Foo.hpp" DESTINATION ${INCLUDE_INSTALL_DESTINATION}
-)
-install(
-    EXPORT FooTargets NAMESPACE Foo:: DESTINATION ${CONFIG_INSTALL_DESTINATION}
-)
+install(FILES "${foo_config}" "${foo_config_version}" DESTINATION ${CFG_DEST})
+install(TARGETS foo baz DESTINATION ${LIB_DEST} EXPORT FooTargets)
+install(FILES "Source/headers/Foo.hpp" DESTINATION ${INCL_DEST})
+install(EXPORT FooTargets NAMESPACE Foo:: DESTINATION ${CFG_DEST})

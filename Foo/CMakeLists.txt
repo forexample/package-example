@@ -36,20 +36,10 @@ target_include_directories(baz PUBLIC "$<INSTALL_INTERFACE:${INCL_DEST}>")
 
 target_link_libraries(foo PUBLIC baz)
 
-# Target config
+# Target version
 include(CMakePackageConfigHelpers)
 
-set(foo_config "${CMAKE_CURRENT_BINARY_DIR}/FooConfig.cmake")
 set(foo_config_version "${CMAKE_CURRENT_BINARY_DIR}/FooConfigVersion.cmake")
-
-# CFG_DEST can be used
-# as PACKAGE_CFG_DEST in FooConfig.cmake.in
-configure_package_config_file(
-    "./FooConfig.cmake.in"
-    "${foo_config}"
-    INSTALL_DESTINATION ${CFG_DEST}
-    PATH_VARS CFG_DEST
-)
 
 write_basic_package_version_file(
     "${foo_config_version}"
@@ -58,7 +48,7 @@ write_basic_package_version_file(
 )
 
 # Install targets and configs
-install(FILES "${foo_config}" "${foo_config_version}" DESTINATION ${CFG_DEST})
+install(FILES FooConfig.cmake "${foo_config_version}" DESTINATION ${CFG_DEST})
 install(TARGETS foo baz DESTINATION ${LIB_DEST} EXPORT FooTargets)
 install(FILES "Source/headers/Foo.hpp" DESTINATION ${INCL_DEST})
 install(EXPORT FooTargets NAMESPACE Foo:: DESTINATION ${CFG_DEST})

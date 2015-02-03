@@ -3,9 +3,7 @@
 # See manual:
 #     * http://www.cmake.org/cmake/help/v2.8.12/cmake.html#module:CMakePackageConfigHelpers
 
-@PACKAGE_INIT@
-
-include("@PACKAGE_CFG_DEST@/FooTargets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/FooTargets.cmake")
 
 # Use release variant library in default case;
 # See CMakeLists.txt's `target_compile_definitions` command:

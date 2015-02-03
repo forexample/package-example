@@ -1,3 +1,11 @@
+| Linux                           | Mac                             |
+|---------------------------------|---------------------------------|
+| [![Build Status][master]][repo] | [![Build Status][macosx]][repo] |
+
+[master]: https://travis-ci.org/forexample/package-example.svg?branch=master
+[macosx]: https://travis-ci.org/forexample/package-example.svg?branch=macosx
+[repo]: https://travis-ci.org/forexample/package-example
+
 ### Install Foo
 
 Install project `Foo` in `Debug` and `Release` variants (`Makefile` generator):

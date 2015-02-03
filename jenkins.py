@@ -23,6 +23,13 @@ if os.path.exists('_builds'):
 if os.path.exists('_install'):
   shutil.rmtree('_install')
 
+if os.name == 'nt':
+  do_call('where', 'cmake')
+else:
+  do_call('which', 'cmake')
+
+do_call('cmake', '--version')
+
 def run_build(projname, buildtype, install, verbose):
   if buildtype:
     dir_tag = buildtype

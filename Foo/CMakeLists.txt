@@ -1,13 +1,6 @@
 cmake_minimum_required(VERSION 2.8.11) # target_compile_definitions
 project(Foo)
 
-# If library postfix will be empty,
-# release variant will overwrite debug variant;
-# Note: update before `add_library` command
-if(NOT CMAKE_DEBUG_POSTFIX)
-  set(CMAKE_DEBUG_POSTFIX d)
-endif()
-
 # Library install layout:
 #     * <prefix>/lib/cmake/Foo
 #     * <prefix>/lib/

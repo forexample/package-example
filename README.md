@@ -71,7 +71,7 @@ before every configure):
 > cmake -HBoo -B_builds/Boo -DFoo_DIR="`pwd`/_install/lib/cmake/Foo"
 ```
 
-`find_package` config-mode command will include `FooConfig.cmake` file and import new target `Foo::foo`:
+`find_package` config-mode command will include `FooConfig.cmake` file and import new target `Foo::bar`:
 
 ```bash
 > cat Boo/CMakeLists.txt 

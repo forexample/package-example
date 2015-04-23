@@ -48,7 +48,7 @@ Install the project...
 ```
 
 Note that:
-* library target `baz` for different build types has different names: `libbaz.a` and `libbazd.a`
+* library target `bar` for different build types has different names: `libbar.a` and `libbard.a`
 * header files is equal for both variants
 * cmake-config files `FooConfig.cmake`, `FooConfigVersion.cmake` and `FooTargets.cmake` is equal for both variants
 * `FooTargets-release.cmake` set `Release` imported target properties, e.g. `IMPORTED_LOCATION_RELEASE`

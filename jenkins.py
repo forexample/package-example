@@ -5,13 +5,17 @@ import shutil
 import subprocess
 import sys
 
+cwd = os.getcwd()
+
 def do_call(args):
   oneline = ''
   for i in args:
     oneline += ' "{}"'.format(i)
   print('[{}]>{}'.format(os.getcwd(), oneline))
   try:
-    subprocess.check_call(args)
+    runtime = os.path.join(cwd, '_install', 'bin')
+    os.environ['PATH'] = '{};{}'.format(runtime, os.environ['PATH'])
+    subprocess.check_call(args, env=os.environ)
   except subprocess.CalledProcessError as error:
     print(error)
     print(error.output)
@@ -31,7 +35,9 @@ else:
 do_call(['cmake', '--version'])
 install_dir = os.path.join('_install')
 
-def run_build(projname, buildtype, install, verbose):
+def run_build(projname, buildtype, install, verbose, test):
+  os.chdir(cwd)
+
   print('-' * 80)
   print("+ {} {}".format(projname, buildtype))
   print('-' * 80)
@@ -54,9 +60,15 @@ def run_build(projname, buildtype, install, verbose):
     args += ['--target', 'install']
   do_call(args)
 
+  if test:
+    os.chdir(build_dir)
+    args = ['ctest', '-C', buildtype, '-VV']
+    do_call(args)
+    os.chdir(cwd)
+
   shutil.rmtree(build_dir)
 
-run_build('Foo', 'Release', install=True, verbose=False)
-run_build('Foo', 'Debug', install=True, verbose=False)
-run_build('Boo', 'Release', install=False, verbose=True)
-run_build('Boo', 'Debug', install=False, verbose=True)
+run_build('Foo', 'Release', install=True, verbose=False, test=False)
+run_build('Foo', 'Debug', install=True, verbose=False, test=False)
+run_build('Boo', 'Release', install=False, verbose=True, test=True)
+run_build('Boo', 'Debug', install=False, verbose=True, test=True)

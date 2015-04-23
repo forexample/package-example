@@ -14,5 +14,11 @@ add_executable(boo boo.cpp)
 # * macro FOO_BAZ_DEBUG will be added automatically (Foo::baz usage requirement)
 target_link_libraries(boo Foo::bar)
 
+# CMAKE_<CONFIG>_POSTFIX has no effect on executable
+# * http://www.cmake.org/Bug/view.php?id=7868
+set_target_properties(boo PROPERTIES DEBUG_POSTFIX "d")
+
 enable_testing()
 add_test(NAME BooTest COMMAND boo)
+
+install(TARGETS boo DESTINATION bin)

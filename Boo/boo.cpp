@@ -1,10 +1,9 @@
-#include <Foo.hpp>
+#include <foo/Bar.hpp>
 #include <cstdlib> // EXIT_SUCCESS
 #include <iostream> // std::cout
 
-int foo();
-
 int main() {
-  std::cout << "foo: " << foo() << std::endl;
+  std::cout << "Hello, Boo!" << std::endl;
+  foo::Bar::say();
   return EXIT_SUCCESS;
 }

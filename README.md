@@ -10,16 +10,20 @@
 
 Install project `Foo` in `Debug` and `Release` variants (`Makefile` generator):
 ``` bash
-> cmake -HFoo -B_builds/Foo-debug -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX="`pwd`/_install"
+> cmake -HFoo -B_builds/Foo-debug -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEBUG_POSTFIX=d -DCMAKE_INSTALL_PREFIX="`pwd`/_install"
 > cmake --build _builds/Foo-debug --target install
 ...
 Install the project...
 -- Install configuration: "Debug"
+-- Installing: /.../_install/lib/libbard.a
+-- Installing: /.../_install/lib/libbazd.a
+-- Installing: /.../_install/include/foo
+-- Installing: /.../_install/include/foo/Bar.hpp
+-- Installing: /.../_install/include/foo/Baz.hpp
+-- Installing: /.../_install/include/bar_export.h
+-- Installing: /.../_install/include/baz_export.h
 -- Installing: /.../_install/lib/cmake/Foo/FooConfig.cmake
 -- Installing: /.../_install/lib/cmake/Foo/FooConfigVersion.cmake
--- Installing: /.../_install/lib/libfood.a
--- Installing: /.../_install/lib/libbazd.a
--- Installing: /.../_install/include/Foo.hpp
 -- Installing: /.../_install/lib/cmake/Foo/FooTargets.cmake
 -- Installing: /.../_install/lib/cmake/Foo/FooTargets-debug.cmake
 ```
@@ -28,18 +32,23 @@ Install the project...
 > cmake -HFoo -B_builds/Foo-release -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="`pwd`/_install"
 > cmake --build _builds/Foo-release --target install
 ...
+Install the project...
 -- Install configuration: "Release"
+-- Installing: /.../_install/lib/libbar.a
+-- Installing: /.../_install/lib/libbaz.a
+-- Up-to-date: /.../_install/include/foo
+-- Up-to-date: /.../_install/include/foo/Bar.hpp
+-- Up-to-date: /.../_install/include/foo/Baz.hpp
+-- Installing: /.../_install/include/bar_export.h
+-- Installing: /.../_install/include/baz_export.h
 -- Installing: /.../_install/lib/cmake/Foo/FooConfig.cmake
 -- Installing: /.../_install/lib/cmake/Foo/FooConfigVersion.cmake
--- Installing: /.../_install/lib/libfoo.a
--- Installing: /.../_install/lib/libbaz.a
--- Up-to-date: /.../_install/include/Foo.hpp
 -- Installing: /.../_install/lib/cmake/Foo/FooTargets.cmake
 -- Installing: /.../_install/lib/cmake/Foo/FooTargets-release.cmake
 ```
 
 Note that:
-* library target `foo` for different build types has different names: `libfoo.a` and `libfood.a`
+* library target `baz` for different build types has different names: `libbaz.a` and `libbazd.a`
 * header files is equal for both variants
 * cmake-config files `FooConfig.cmake`, `FooConfigVersion.cmake` and `FooTargets.cmake` is equal for both variants
 * `FooTargets-release.cmake` set `Release` imported target properties, e.g. `IMPORTED_LOCATION_RELEASE`
@@ -66,27 +75,23 @@ before every configure):
 
 ```bash
 > cat Boo/CMakeLists.txt 
-cmake_minimum_required(VERSION 2.8.5)
-project(Boo)
-
-find_package(Foo CONFIG REQUIRED NO_CMAKE_BUILDS_PATH)
-
+find_package(Foo CONFIG REQUIRED)
 add_executable(boo boo.cpp)
-target_link_libraries(boo Foo::foo)
+target_link_libraries(boo Foo::bar)
 ```
 
 Note that:
-* definition `FOO_DEBUG` will be added automatically
-* include directory for target `Foo::foo` will be added automatically
-* in `Debug`-mode macro `FOO_DEBUG` will be `1` and linker will use `libfood.a` library
-* in other modes (or without mode) `FOO_DEBUG` will be `0` and linker will use `libfoo.a` library
+* definition `FOO_BAR_DEBUG` will be added automatically
+* include directory for target `Foo::bar` will be added automatically
+* in `Debug`-mode macro `FOO_BAR_DEBUG` will be `1` and linker will use `libbard.a` library
+* in `Release`-mode macro `FOO_BAR_DEBUG` will be `0` and linker will use `libbar.a` library
 * if `find_package` command specify library version then `FooConfigVersion.cmake` module will check compatibility:
 
 ```bash
 > grep find_package Boo/CMakeLists.txt 
 find_package(Foo 2.0 CONFIG REQUIRED)
 > cmake -HBoo -B_builds/Boo -DCMAKE_INSTALL_PREFIX="`pwd`/_install"
-CMake Error at CMakeLists.txt:4 (find_package):
+CMake Error at CMakeLists.txt:8 (find_package):
   Could not find a configuration file for package "Foo" that is compatible
   with requested version "2.0".
 
@@ -94,6 +99,10 @@ The following configuration files were considered but not accepted:
 
     /.../_install/lib/cmake/Foo/FooConfig.cmake, version: 1.2.3
 ```
+
+### Script
+
+See `jenkins.py` script for automatic testing + options `--install-boo` and `--shared`.
 
 ### UML sequence diagram
 

@@ -23,10 +23,6 @@ cmake_minimum_required(VERSION 3.0)
 project(Foo VERSION 1.2.3)
 
 ####
-# Directory for generated files
-set(generated_dir "${CMAKE_CURRENT_BINARY_DIR}/generated")
-
-####
 # Create targets
 add_library(bar "Source/foo/Bar.cpp" "Source/foo/Bar.hpp")
 add_library(baz "Source/foo/Baz.cpp" "Source/foo/Baz.hpp")
@@ -62,7 +58,7 @@ include_directories("${CMAKE_CURRENT_BINARY_DIR}")
 target_link_libraries(bar PUBLIC baz)
 
 ####
-# Installation
+# Installation (https://github.com/forexample/package-example)
 
 # Layout. This works for all platforms:
 #   * <prefix>/lib/cmake/<PROJECT-NAME>
@@ -70,6 +66,8 @@ target_link_libraries(bar PUBLIC baz)
 #   * <prefix>/include/
 set(config_install_dir "lib/cmake/${PROJECT_NAME}")
 set(include_install_dir "include")
+
+set(generated_dir "${CMAKE_CURRENT_BINARY_DIR}/generated")
 
 # Configuration
 set(version_config "${generated_dir}/${PROJECT_NAME}ConfigVersion.cmake")

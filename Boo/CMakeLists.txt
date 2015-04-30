@@ -1,11 +1,15 @@
 cmake_minimum_required(VERSION 3.0)
 project(Boo)
 
-# Add NO_CMAKE_BUILDS_PATH for windows if using CMake-GUI to build packages
-# to avoid searching in temporary build directory of Foo project
-# See 5:
-#    * http://www.cmake.org/cmake/help/v3.0/command/find_package.html
-find_package(Foo CONFIG REQUIRED)
+if(TARGET bar)
+  add_library(Foo::bar ALIAS bar)
+else()
+  # Add NO_CMAKE_BUILDS_PATH for windows if using CMake-GUI to build packages
+  # to avoid searching in temporary build directory of Foo project
+  # See 5:
+  #    * http://www.cmake.org/cmake/help/v3.0/command/find_package.html
+  find_package(Foo CONFIG REQUIRED)
+endif()
 
 add_executable(boo boo.cpp)
 

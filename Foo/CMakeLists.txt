@@ -51,8 +51,11 @@ generate_export_header(baz)
 #   * header can be included by C++ code `#include <foo/Bar.hpp>`
 #   * header location in project: ${CMAKE_CURRENT_BINARY_DIR}/bar_export.hpp
 #   * header can be included by: `#include <bar_export.hpp>`
-include_directories("Source")
-include_directories("${CMAKE_CURRENT_BINARY_DIR}")
+target_include_directories(
+    baz PUBLIC
+    "$<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/Source>"
+    "$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>"
+)
 
 # Link required library
 target_link_libraries(bar PUBLIC baz)

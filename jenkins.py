@@ -12,6 +12,9 @@ parser.add_argument('--shared', action='store_true', help='Build shared libs')
 parser.add_argument(
     '--install-boo', action='store_true', help='Install boo and run'
 )
+parser.add_argument(
+    '--monolithic', action='store_true', help='Build all in one'
+)
 cmd_args = parser.parse_args()
 
 cwd = os.getcwd()
@@ -83,17 +86,26 @@ def run_build(projname, buildtype, install, verbose, test):
     do_call(args)
     os.chdir(cwd)
 
-run_build('Foo', 'Release', install=True, verbose=False, test=False)
-run_build('Foo', 'Debug', install=True, verbose=False, test=False)
+run_test_after_install = False
+if cmd_args.monolithic:
+  run_build('.', 'Release', install=True, verbose=True, test=False)
+  run_build('.', 'Debug', install=True, verbose=True, test=False)
+  run_test_after_install = True
+else:
+  run_build('Foo', 'Release', install=True, verbose=False, test=False)
+  run_build('Foo', 'Debug', install=True, verbose=False, test=False)
 
-if cmd_args.install_boo:
-  run_build('Boo', 'Release', install=True, verbose=True, test=False)
-  run_build('Boo', 'Debug', install=True, verbose=True, test=False)
+  if cmd_args.install_boo:
+    run_build('Boo', 'Release', install=True, verbose=True, test=False)
+    run_build('Boo', 'Debug', install=True, verbose=True, test=False)
+    run_test_after_install = True
+  else:
+    run_build('Boo', 'Release', install=False, verbose=True, test=True)
+    run_build('Boo', 'Debug', install=False, verbose=True, test=True)
+
+if run_test_after_install:
   executables = glob.glob(os.path.join(exe_dir, 'boo*'))
   if len(executables) != 2:
     sys.exit('Expected two executables')
   for x in executables:
     do_call([x])
-else:
-  run_build('Boo', 'Release', install=False, verbose=True, test=True)
-  run_build('Boo', 'Debug', install=False, verbose=True, test=True)

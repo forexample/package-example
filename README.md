@@ -102,7 +102,7 @@ The following configuration files were considered but not accepted:
 
 ### Script
 
-See `jenkins.py` script for automatic testing + options `--install-boo` and `--shared`.
+See `jenkins.py` script for automatic testing + options `--install-boo`/`--shared` and `--monolithic`.
 
 ### UML sequence diagram
 

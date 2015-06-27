@@ -53,8 +53,6 @@ Note that:
 * cmake-config files `FooConfig.cmake`, `FooConfigVersion.cmake` and `FooTargets.cmake` is equal for both variants
 * `FooTargets-release.cmake` set `Release` imported target properties, e.g. `IMPORTED_LOCATION_RELEASE`
 * `FooTargets-debug.cmake` set `Debug` imported target properties, e.g. `IMPORTED_LOCATION_DEBUG`
-* `FooConfig.cmake` set `IMPORTED_LOCATION` property to value of `IMPORTED_LOCATION_RELEASE` (will be used in cases
-when there is no configuration variant at all or variant is differ from `Release`/`Debug`)
 
 ### Boo (use installed Foo)
 

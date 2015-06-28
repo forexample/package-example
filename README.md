@@ -105,3 +105,8 @@ See `jenkins.py` script for automatic testing + options `--install-boo`/`--share
 ### UML sequence diagram
 
 ![uml](https://raw.github.com/forexample/package-example/master/wiki/FindPackage.UML-sequence.png)
+
+### More
+
+* [Package manager](https://github.com/ruslo/hunter)
+* [Toolchains](https://github.com/ruslo/polly)

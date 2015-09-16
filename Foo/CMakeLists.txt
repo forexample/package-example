@@ -88,7 +88,9 @@ write_basic_package_version_file(
 )
 
 # Configure '<PROJECT-NAME>Config.cmake'
-# Note: variable 'targets_export_name' used
+# Use variables:
+#   * targets_export_name
+#   * PROJECT_NAME
 configure_file("cmake/Config.cmake.in" "${project_config}" @ONLY)
 
 # Targets:

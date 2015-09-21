@@ -1,16 +1,4 @@
-set(_package_components "${@PROJECT_NAME@_FIND_COMPONENTS}")
-string(COMPARE NOTEQUAL "${_package_components}" "" _has_components)
-if(_has_components)
-  set(_error_message "Package `@PROJECT_NAME@` has no components:")
-  foreach(x ${_package_components})
-    set(_error_message "${_error_message}\n  ${x}")
-  endforeach()
-  set(
-      _error_message
-      "${_error_message}\nPlease check your `find_package` call."
-  )
-
-  message(FATAL_ERROR "${_error_message}")
-endif()
+@PACKAGE_INIT@
 
 include("${CMAKE_CURRENT_LIST_DIR}/@targets_export_name@.cmake")
+check_required_components("@PROJECT_NAME@")

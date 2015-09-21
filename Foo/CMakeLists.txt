@@ -91,7 +91,11 @@ write_basic_package_version_file(
 # Use variables:
 #   * targets_export_name
 #   * PROJECT_NAME
-configure_file("cmake/Config.cmake.in" "${project_config}" @ONLY)
+configure_package_config_file(
+    "cmake/Config.cmake.in"
+    "${project_config}"
+    INSTALL_DESTINATION "${config_install_dir}"
+)
 
 # Targets:
 #   * <prefix>/lib/libbar.a

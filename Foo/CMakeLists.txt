@@ -82,7 +82,8 @@ set(namespace "${PROJECT_NAME}::")
 include(CMakePackageConfigHelpers)
 
 # Configure '<PROJECT-NAME>ConfigVersion.cmake'
-# Note: PROJECT_VERSION is used as a VERSION
+# Use:
+#   * PROJECT_VERSION
 write_basic_package_version_file(
     "${version_config}" COMPATIBILITY SameMajorVersion
 )

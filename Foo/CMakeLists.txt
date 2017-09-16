@@ -60,8 +60,7 @@ target_include_directories(
 # Link required library
 target_link_libraries(bar PUBLIC baz)
 
-####
-# Installation (https://github.com/forexample/package-example)
+# Installation (https://github.com/forexample/package-example) {
 
 # Layout. This works for all platforms:
 #   * <prefix>/lib/cmake/<PROJECT-NAME>
@@ -146,3 +145,5 @@ install(
     NAMESPACE "${namespace}"
     DESTINATION "${config_install_dir}"
 )
+
+# }

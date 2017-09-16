@@ -75,7 +75,7 @@ set(generated_dir "${CMAKE_CURRENT_BINARY_DIR}/generated")
 # Configuration
 set(version_config "${generated_dir}/${PROJECT_NAME}ConfigVersion.cmake")
 set(project_config "${generated_dir}/${PROJECT_NAME}Config.cmake")
-set(targets_export_name "${PROJECT_NAME}Targets")
+set(TARGETS_EXPORT_NAME "${PROJECT_NAME}Targets")
 set(namespace "${PROJECT_NAME}::")
 
 # Include module with fuction 'write_basic_package_version_file'
@@ -89,7 +89,7 @@ write_basic_package_version_file(
 
 # Configure '<PROJECT-NAME>Config.cmake'
 # Use variables:
-#   * targets_export_name
+#   * TARGETS_EXPORT_NAME
 #   * PROJECT_NAME
 configure_package_config_file(
     "cmake/Config.cmake.in"
@@ -104,7 +104,7 @@ configure_package_config_file(
 #   * headers can be included by C++ code `#include <foo/Bar.hpp>`
 install(
     TARGETS bar baz
-    EXPORT "${targets_export_name}"
+    EXPORT "${TARGETS_EXPORT_NAME}"
     LIBRARY DESTINATION "lib"
     ARCHIVE DESTINATION "lib"
     RUNTIME DESTINATION "bin"
@@ -141,7 +141,7 @@ install(
 # Config
 #   * <prefix>/lib/cmake/Foo/FooTargets.cmake
 install(
-    EXPORT "${targets_export_name}"
+    EXPORT "${TARGETS_EXPORT_NAME}"
     NAMESPACE "${namespace}"
     DESTINATION "${config_install_dir}"
 )

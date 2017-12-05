@@ -3,7 +3,7 @@
 
 #include <iostream> // std::cout
 #include <foo/Baz.hpp>
-#include <bar_export.h> // BAR_EXPORT
+#include <foo/BAR_EXPORT.h>
 
 namespace foo {
 

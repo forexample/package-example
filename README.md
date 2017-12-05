@@ -20,8 +20,8 @@ Install the project...
 -- Installing: /.../_install/include/foo
 -- Installing: /.../_install/include/foo/Bar.hpp
 -- Installing: /.../_install/include/foo/Baz.hpp
--- Installing: /.../_install/include/bar_export.h
--- Installing: /.../_install/include/baz_export.h
+-- Installing: /.../_install/include/foo/BAR_EXPORT.h
+-- Installing: /.../_install/include/foo/BAZ_EXPORT.h
 -- Installing: /.../_install/lib/cmake/Foo/FooConfig.cmake
 -- Installing: /.../_install/lib/cmake/Foo/FooConfigVersion.cmake
 -- Installing: /.../_install/lib/cmake/Foo/FooTargets.cmake
@@ -39,8 +39,8 @@ Install the project...
 -- Up-to-date: /.../_install/include/foo
 -- Up-to-date: /.../_install/include/foo/Bar.hpp
 -- Up-to-date: /.../_install/include/foo/Baz.hpp
--- Installing: /.../_install/include/bar_export.h
--- Installing: /.../_install/include/baz_export.h
+-- Installing: /.../_install/include/foo/BAR_EXPORT.h
+-- Installing: /.../_install/include/foo/BAZ_EXPORT.h
 -- Installing: /.../_install/lib/cmake/Foo/FooConfig.cmake
 -- Installing: /.../_install/lib/cmake/Foo/FooConfigVersion.cmake
 -- Installing: /.../_install/lib/cmake/Foo/FooTargets.cmake

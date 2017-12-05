@@ -2,7 +2,7 @@
 #define FOO_BAZ_HPP_
 
 #include <iostream> // std::cout
-#include <baz_export.h> // BAZ_EXPORT
+#include <foo/BAZ_EXPORT.h>
 
 namespace foo {
 

@@ -39,22 +39,28 @@ target_compile_definitions(bar PUBLIC "FOO_BAR_DEBUG=$<CONFIG:Debug>")
 target_compile_definitions(baz PUBLIC "FOO_BAZ_DEBUG=$<CONFIG:Debug>")
 
 # Generate:
-#   * ${CMAKE_CURRENT_BINARY_DIR}/bar_export.h with BAR_EXPORT
-#   * ${CMAKE_CURRENT_BINARY_DIR}/baz_export.h with BAZ_EXPORT
+#   * ${CMAKE_CURRENT_BINARY_DIR}/generated_headers/foo/BAR_EXPORT.h with BAR_EXPORT
+#   * ${CMAKE_CURRENT_BINARY_DIR}/generated_headers/foo/BAZ_EXPORT.h with BAZ_EXPORT
+# Renaming because:
+# * We need prefix 'foo' to fit OSX/iOS frameworks layout
+# * File name match name of the macro
+set(generated_headers "${CMAKE_CURRENT_BINARY_DIR}/generated_headers")
+set(bar_export "${generated_headers}/foo/BAR_EXPORT.h")
+set(baz_export "${generated_headers}/foo/BAZ_EXPORT.h")
 include(GenerateExportHeader)
-generate_export_header(bar)
-generate_export_header(baz)
+generate_export_header(bar EXPORT_FILE_NAME ${bar_export})
+generate_export_header(baz EXPORT_FILE_NAME ${baz_export})
 
 # Global includes. Used by all targets
 # Note:
 #   * header location in project: Foo/Source/foo/Bar.hpp
 #   * header can be included by C++ code `#include <foo/Bar.hpp>`
-#   * header location in project: ${CMAKE_CURRENT_BINARY_DIR}/bar_export.hpp
-#   * header can be included by: `#include <bar_export.hpp>`
+#   * header location in project: ${CMAKE_CURRENT_BINARY_DIR}/generated_headers/foo/BAR_EXPORT.h
+#   * header can be included by: `#include <BAR_EXPORT.h>`
 target_include_directories(
     baz PUBLIC
     "$<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/Source>"
-    "$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>"
+    "$<BUILD_INTERFACE:${generated_headers}>"
 )
 
 # Link required library
@@ -121,13 +127,11 @@ install(
 )
 
 # Export headers:
-#   * ${CMAKE_CURRENT_BINARY_DIR}/bar_export.h -> <prefix>/include/bar_export.h
-#   * ${CMAKE_CURRENT_BINARY_DIR}/baz_export.h -> <prefix>/include/baz_export.h
+#   * ${CMAKE_CURRENT_BINARY_DIR}/.../BAR_EXPORT.h -> <prefix>/include/foo/BAR_EXPORT.h
+#   * ${CMAKE_CURRENT_BINARY_DIR}/.../BAZ_EXPORT.h -> <prefix>/include/foo/BAZ_EXPORT.h
 install(
-    FILES
-        "${CMAKE_CURRENT_BINARY_DIR}/bar_export.h"
-        "${CMAKE_CURRENT_BINARY_DIR}/baz_export.h"
-    DESTINATION "${include_install_dir}"
+    FILES "${bar_export}" "${baz_export}"
+    DESTINATION "${include_install_dir}/foo"
 )
 
 # Config

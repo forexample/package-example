@@ -9,6 +9,7 @@ else()
   # See 5:
   #    * http://www.cmake.org/cmake/help/v3.0/command/find_package.html
   find_package(Foo CONFIG REQUIRED)
+  message("Foo_DIR: ${Foo_DIR}")
 endif()
 
 add_executable(boo boo.cpp)
@@ -25,4 +26,10 @@ set_target_properties(boo PROPERTIES DEBUG_POSTFIX "d")
 enable_testing()
 add_test(NAME BooTest COMMAND boo)
 
-install(TARGETS boo DESTINATION bin)
+# Introduce variables:
+# * CMAKE_INSTALL_LIBDIR
+# * CMAKE_INSTALL_BINDIR
+# * CMAKE_INSTALL_INCLUDEDIR
+include(GNUInstallDirs)
+
+install(TARGETS boo DESTINATION ${CMAKE_INSTALL_BINDIR})

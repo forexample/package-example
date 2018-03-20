@@ -68,12 +68,17 @@ target_link_libraries(bar PUBLIC baz)
 
 # Installation (https://github.com/forexample/package-example) {
 
+# Introduce variables:
+# * CMAKE_INSTALL_LIBDIR
+# * CMAKE_INSTALL_BINDIR
+# * CMAKE_INSTALL_INCLUDEDIR
+include(GNUInstallDirs)
+
 # Layout. This works for all platforms:
-#   * <prefix>/lib/cmake/<PROJECT-NAME>
-#   * <prefix>/lib/
+#   * <prefix>/lib*/cmake/<PROJECT-NAME>
+#   * <prefix>/lib*/
 #   * <prefix>/include/
-set(config_install_dir "lib/cmake/${PROJECT_NAME}")
-set(include_install_dir "include")
+set(config_install_dir "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}")
 
 set(generated_dir "${CMAKE_CURRENT_BINARY_DIR}/generated")
 
@@ -111,10 +116,10 @@ configure_package_config_file(
 install(
     TARGETS bar baz
     EXPORT "${TARGETS_EXPORT_NAME}"
-    LIBRARY DESTINATION "lib"
-    ARCHIVE DESTINATION "lib"
-    RUNTIME DESTINATION "bin"
-    INCLUDES DESTINATION "${include_install_dir}"
+    LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+    ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+    RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
+    INCLUDES DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
 )
 
 # Headers:
@@ -122,7 +127,7 @@ install(
 #   * Source/foo/Baz.hpp -> <prefix>/include/foo/Baz.hpp
 install(
     DIRECTORY "Source/foo"
-    DESTINATION "${include_install_dir}"
+    DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
     FILES_MATCHING PATTERN "*.hpp"
 )
 
@@ -131,7 +136,7 @@ install(
 #   * ${CMAKE_CURRENT_BINARY_DIR}/.../BAZ_EXPORT.h -> <prefix>/include/foo/BAZ_EXPORT.h
 install(
     FILES "${bar_export}" "${baz_export}"
-    DESTINATION "${include_install_dir}/foo"
+    DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/foo"
 )
 
 # Config

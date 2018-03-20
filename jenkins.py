@@ -15,14 +15,12 @@ parser.add_argument(
 parser.add_argument(
     '--monolithic', action='store_true', help='Build all in one'
 )
+parser.add_argument(
+    '--install-dir', help='Custom install directory'
+)
 cmd_args = parser.parse_args()
 
 cwd = os.getcwd()
-exe_dir = os.path.join(cwd, '_install', 'bin')
-
-if not cmd_args.install_boo and cmd_args.shared:
-  # windows and cygwin
-  os.environ['PATH'] = '{};{}'.format(exe_dir, os.environ['PATH'])
 
 def do_call(args):
   oneline = ''
@@ -39,6 +37,7 @@ def do_call(args):
 if os.path.exists('_builds'):
   shutil.rmtree('_builds')
 
+# Warning: do not remove cmd_args.install_dir - it may be system!
 if os.path.exists('_install'):
   shutil.rmtree('_install')
 
@@ -48,7 +47,17 @@ else:
   do_call(['which', 'cmake'])
 
 do_call(['cmake', '--version'])
-install_dir = os.path.join('_install')
+
+if cmd_args.install_dir:
+  install_dir = cmd_args.install_dir
+else:
+  install_dir = os.path.join('_install')
+
+exe_dir = os.path.join(install_dir, 'bin')
+
+if not cmd_args.install_boo and cmd_args.shared:
+  # windows and cygwin
+  os.environ['PATH'] = '{};{}'.format(exe_dir, os.environ['PATH'])
 
 def run_build(projname, buildtype, install, verbose, test):
   os.chdir(cwd)
@@ -105,6 +114,13 @@ else:
 
 if run_test_after_install:
   executables = glob.glob(os.path.join(exe_dir, 'boo*'))
+
+  try:
+    # when installed to system
+    executables.remove('/usr/bin/bootctl')
+  except ValueError:
+    pass
+
   if len(executables) != 2:
     sys.exit('Expected two executables')
   for x in executables:

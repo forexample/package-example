@@ -12,6 +12,26 @@ else()
   message("Foo_DIR: ${Foo_DIR}")
 endif()
 
+# Introduce variables:
+# * CMAKE_INSTALL_LIBDIR
+# * CMAKE_INSTALL_BINDIR
+# * CMAKE_INSTALL_INCLUDEDIR
+include(GNUInstallDirs)
+
+if(BUILD_SHARED_LIBS)
+  if(IOS)
+    # TODO
+  elseif(ANDROID)
+    # TODO
+  elseif(UNIX)
+    if(APPLE)
+      set(CMAKE_INSTALL_RPATH "@executable_path/../${CMAKE_INSTALL_LIBDIR}")
+    else()
+      set(CMAKE_INSTALL_RPATH "\$ORIGIN/../${CMAKE_INSTALL_LIBDIR}")
+    endif()
+  endif()
+endif()
+
 add_executable(boo boo.cpp)
 
 # Note:
@@ -25,11 +45,5 @@ set_target_properties(boo PROPERTIES DEBUG_POSTFIX "d")
 
 enable_testing()
 add_test(NAME BooTest COMMAND boo)
-
-# Introduce variables:
-# * CMAKE_INSTALL_LIBDIR
-# * CMAKE_INSTALL_BINDIR
-# * CMAKE_INSTALL_INCLUDEDIR
-include(GNUInstallDirs)
 
 install(TARGETS boo DESTINATION ${CMAKE_INSTALL_BINDIR})

@@ -16,17 +16,15 @@ endif()
 # * CMAKE_INSTALL_INCLUDEDIR
 include(GNUInstallDirs)
 
-if(BUILD_SHARED_LIBS)
-  if(IOS)
-    # TODO
-  elseif(ANDROID)
-    # TODO
-  elseif(UNIX)
-    if(APPLE)
-      set(CMAKE_INSTALL_RPATH "@executable_path/../${CMAKE_INSTALL_LIBDIR}")
-    else()
-      set(CMAKE_INSTALL_RPATH "\$ORIGIN/../${CMAKE_INSTALL_LIBDIR}")
-    endif()
+if(IOS)
+  # TODO
+elseif(ANDROID)
+  # TODO
+elseif(UNIX)
+  if(APPLE)
+    set(CMAKE_INSTALL_RPATH "@executable_path/../${CMAKE_INSTALL_LIBDIR}")
+  else()
+    set(CMAKE_INSTALL_RPATH "\$ORIGIN/../${CMAKE_INSTALL_LIBDIR}")
   endif()
 endif()
 

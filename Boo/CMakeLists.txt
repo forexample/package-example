@@ -1,13 +1,11 @@
-cmake_minimum_required(VERSION 3.0)
+# Since CMake 3.3 'NO_CMAKE_BUILDS_PATH' was removed:
+# * https://cmake.org/cmake/help/latest/release/3.3.html#deprecated-and-removed-features
+cmake_minimum_required(VERSION 3.3)
 project(Boo)
 
 if(TARGET bar)
   add_library(Foo::bar ALIAS bar)
 else()
-  # Add NO_CMAKE_BUILDS_PATH for windows if using CMake-GUI to build packages
-  # to avoid searching in temporary build directory of Foo project
-  # See 5:
-  #    * http://www.cmake.org/cmake/help/v3.0/command/find_package.html
   find_package(Foo CONFIG REQUIRED)
   message("Foo_DIR: ${Foo_DIR}")
 endif()

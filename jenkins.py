@@ -18,6 +18,9 @@ parser.add_argument(
 parser.add_argument(
     '--install-dir', help='Custom install directory'
 )
+parser.add_argument(
+    '--generator', help='CMake generator'
+)
 cmd_args = parser.parse_args()
 
 cwd = os.getcwd()
@@ -65,7 +68,9 @@ def run_build(projname, buildtype, install, verbose, test):
   print('-' * 80)
   print("+ {} {}".format(projname, buildtype))
   print('-' * 80)
+
   build_dir = os.path.join('_builds', '{}-{}'.format(projname, buildtype))
+
   args = [
       'cmake',
       '-H{}'.format(projname),
@@ -73,14 +78,20 @@ def run_build(projname, buildtype, install, verbose, test):
       '-DCMAKE_BUILD_TYPE={}'.format(buildtype),
       '-DCMAKE_INSTALL_PREFIX={}'.format(install_dir)
   ]
+
   if buildtype != 'Release':
     args += ['-DCMAKE_{}_POSTFIX=-{}'.format(buildtype.upper(), buildtype)]
+
   if verbose:
     args += ['-DCMAKE_VERBOSE_MAKEFILE=ON']
+
   if cmd_args.shared:
     args += ['-DBUILD_SHARED_LIBS=ON']
   else:
     args += ['-DBUILD_SHARED_LIBS=OFF']
+
+  if cmd_args.generator:
+    args += ['-G{}'.format(cmd_args.generator)]
 
   do_call(args)
 

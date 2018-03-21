@@ -76,6 +76,16 @@ if not cmd_args.shared:
 if windows_path_update:
   os.environ['PATH'] = '{};{}'.format(exe_dir, os.environ['PATH'])
 
+if cmd_args.generator == 'MinGW Makefiles':
+  os.environ['PATH'] = '{};{}'.format(
+      os.environ['MINGW_PATH'], os.environ['PATH']
+  )
+
+if cmd_args.generator == 'MSYS Makefiles':
+  os.environ['PATH'] = '{};{}'.format(
+      os.environ['MSYS_PATH'], os.environ['PATH']
+  )
+
 def run_build(projname, buildtype, install, verbose, test):
   os.chdir(cwd)
 

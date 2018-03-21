@@ -1,9 +1,6 @@
-| Linux                           | Mac                             |
-|---------------------------------|---------------------------------|
-| [![Build Status][master]][repo] | [![Build Status][macosx]][repo] |
+[![Build Status][master]][repo] [![Build status](https://ci.appveyor.com/api/projects/status/oln2ks60gs8fs5ux/branch/master?svg=true)](https://ci.appveyor.com/project/ruslo/package-example/branch/master)
 
 [master]: https://travis-ci.org/forexample/package-example.svg?branch=master
-[macosx]: https://travis-ci.org/forexample/package-example.svg?branch=macosx
 [repo]: https://travis-ci.org/forexample/package-example
 
 ### Install Foo

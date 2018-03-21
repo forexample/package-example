@@ -51,7 +51,7 @@ do_call(['cmake', '--version'])
 if cmd_args.install_dir:
   install_dir = cmd_args.install_dir
 else:
-  install_dir = os.path.join('_install')
+  install_dir = os.path.join(cwd, '_install')
 
 exe_dir = os.path.join(install_dir, 'bin')
 

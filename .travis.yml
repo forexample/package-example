@@ -92,7 +92,7 @@ install:
   - export PATH="`pwd`/_ci/cmake/bin:${PATH}"
 
 script:
-  - sudo python3 ./jenkins.py --install-boo ${SHARED} ${MONOLITHIC} ${INSTALL_DIR}
+  - sudo PATH=$PATH python3 ./jenkins.py --install-boo ${SHARED} ${MONOLITHIC} ${INSTALL_DIR}
 
 # https://docs.travis-ci.com/user/customizing-the-build/#Whitelisting-or-blacklisting-branches
 branches:

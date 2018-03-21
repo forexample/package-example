@@ -97,16 +97,16 @@ def run_build(projname, buildtype, install, verbose, test):
 
 run_test_after_install = False
 if cmd_args.monolithic:
-  run_build('.', 'Release', install=True, verbose=True, test=False)
-  run_build('.', 'Debug', install=True, verbose=True, test=False)
+  run_build('.', 'Release', install=True, verbose=True, test=True)
+  run_build('.', 'Debug', install=True, verbose=True, test=True)
   run_test_after_install = True
 else:
   run_build('Foo', 'Release', install=True, verbose=False, test=False)
   run_build('Foo', 'Debug', install=True, verbose=False, test=False)
 
   if cmd_args.install_boo:
-    run_build('Boo', 'Release', install=True, verbose=True, test=False)
-    run_build('Boo', 'Debug', install=True, verbose=True, test=False)
+    run_build('Boo', 'Release', install=True, verbose=True, test=True)
+    run_build('Boo', 'Debug', install=True, verbose=True, test=True)
     run_test_after_install = True
   else:
     run_build('Boo', 'Release', install=False, verbose=True, test=True)

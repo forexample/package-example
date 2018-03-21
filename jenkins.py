@@ -3,6 +3,7 @@
 import argparse
 import glob
 import os
+import platform
 import shutil
 import subprocess
 import sys
@@ -58,8 +59,21 @@ else:
 
 exe_dir = os.path.join(install_dir, 'bin')
 
-if not cmd_args.install_boo and cmd_args.shared:
-  # windows and cygwin
+if platform.system() == 'Windows' or platform.system().startswith('CYGWIN'):
+  # Update PATH for DLL platforms
+  windows_path_update = True
+else:
+  windows_path_update = False
+
+if cmd_args.install_boo:
+  # We will install 'boo' executable so it should work without PATH modification
+  windows_path_update = False
+
+if not cmd_args.shared:
+  # No need to update PATH if libraries are static
+  windows_path_update = False
+
+if windows_path_update:
   os.environ['PATH'] = '{};{}'.format(exe_dir, os.environ['PATH'])
 
 def run_build(projname, buildtype, install, verbose, test):
@@ -75,9 +89,13 @@ def run_build(projname, buildtype, install, verbose, test):
       'cmake',
       '-H{}'.format(projname),
       '-B{}'.format(build_dir),
-      '-DCMAKE_BUILD_TYPE={}'.format(buildtype),
-      '-DCMAKE_INSTALL_PREFIX={}'.format(install_dir)
+      '-DCMAKE_BUILD_TYPE={}'.format(buildtype)
   ]
+
+  if install:
+    args += ['-DCMAKE_INSTALL_PREFIX={}'.format(install_dir)]
+  else:
+    args += ['-DCMAKE_PREFIX_PATH={}'.format(install_dir)]
 
   if buildtype != 'Release':
     args += ['-DCMAKE_{}_POSTFIX=-{}'.format(buildtype.upper(), buildtype)]

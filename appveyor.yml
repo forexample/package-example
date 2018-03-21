@@ -1,0 +1,105 @@
+# Windows (https://github.com/travis-ci-tester/toolchain-table)
+
+environment:
+  matrix:
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      SHARED: ""
+      MONOLITHIC: ""
+      GENERATOR: "Visual Studio 15 2017 Win64"
+
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      SHARED: "--shared"
+      MONOLITHIC: ""
+      GENERATOR: "Visual Studio 15 2017 Win64"
+
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      SHARED: ""
+      MONOLITHIC: "--monolithic"
+      GENERATOR: "Visual Studio 15 2017 Win64"
+
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      SHARED: "--shared"
+      MONOLITHIC: "--monolithic"
+      GENERATOR: "Visual Studio 15 2017 Win64"
+
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      SHARED: ""
+      MONOLITHIC: ""
+      GENERATOR: "MinGW Makefiles"
+
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      SHARED: "--shared"
+      MONOLITHIC: ""
+      GENERATOR: "MinGW Makefiles"
+
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      SHARED: ""
+      MONOLITHIC: "--monolithic"
+      GENERATOR: "MinGW Makefiles"
+
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      SHARED: "--shared"
+      MONOLITHIC: "--monolithic"
+      GENERATOR: "MinGW Makefiles"
+
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      SHARED: ""
+      MONOLITHIC: ""
+      GENERATOR: "MSYS Makefiles"
+
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      SHARED: "--shared"
+      MONOLITHIC: ""
+      GENERATOR: "MSYS Makefiles"
+
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      SHARED: ""
+      MONOLITHIC: "--monolithic"
+      GENERATOR: "MSYS Makefiles"
+
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      SHARED: "--shared"
+      MONOLITHIC: "--monolithic"
+      GENERATOR: "MSYS Makefiles"
+
+install:
+  # Python 3
+  - cmd: set PATH=C:\Python34-x64;C:\Python34-x64\Scripts;%PATH%
+
+  # Install Python package 'requests'
+  - cmd: pip install requests
+
+  # Install latest Polly toolchains and scripts
+  - cmd: appveyor DownloadFile https://github.com/ruslo/polly/archive/master.zip
+  - cmd: 7z x master.zip
+  - cmd: set POLLY_ROOT=%cd%\polly-master
+
+  # Install dependencies (CMake, Ninja)
+  - cmd: python %POLLY_ROOT%\bin\install-ci-dependencies.py
+
+  # Tune locations
+  - cmd: set PATH=%cd%\_ci\cmake\bin;%PATH%
+  - cmd: set PATH=%cd%\_ci\ninja;%PATH%
+
+  - cmd: git submodule update --init --recursive
+
+  # Remove entry with sh.exe from PATH to fix error with MinGW toolchain
+  # (For MinGW make to work correctly sh.exe must NOT be in your path)
+  # * http://stackoverflow.com/a/3870338/2288008
+  - cmd: set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
+
+  - cmd: set MINGW_PATH=C:\mingw-w64\x86_64-7.2.0-posix-seh-rt_v5-rev1\mingw64\bin
+
+  # MSYS2 location
+  - cmd: set MSYS_PATH=C:\msys64\usr\bin
+
+  # Visual Studio 15 2017: Mimic behavior of older versions
+  - cmd: set VS150COMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools
+
+build_script:
+  - cmd: python .\jenkins.py %SHARED% %MONOLITHIC% --generator "%GENERATOR%"
+
+# http://www.appveyor.com/docs/branches#white-and-blacklisting
+branches:
+  except:
+    - /^pr\..*/

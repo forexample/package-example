@@ -3,18 +3,24 @@
 cmake_minimum_required(VERSION 3.3)
 project(Boo)
 
-if(TARGET bar)
-  add_library(Foo::bar ALIAS bar)
-else()
-  find_package(Foo CONFIG REQUIRED)
-  message("Foo_DIR: ${Foo_DIR}")
-endif()
-
 # Introduce variables:
 # * CMAKE_INSTALL_LIBDIR
 # * CMAKE_INSTALL_BINDIR
 # * CMAKE_INSTALL_INCLUDEDIR
 include(GNUInstallDirs)
+
+set(test_path "")
+
+if(TARGET bar)
+  add_library(Foo::bar ALIAS bar)
+  list(APPEND test_path "$<TARGET_FILE_DIR:Foo::bar>")
+else()
+  find_package(Foo CONFIG REQUIRED)
+  message("Foo_DIR: ${Foo_DIR}")
+
+  # TODO: Make it robust
+  list(APPEND test_path "${Foo_DIR}/../../../${CMAKE_INSTALL_BINDIR}")
+endif()
 
 if(IOS)
   # TODO
@@ -43,3 +49,18 @@ enable_testing()
 add_test(NAME BooTest COMMAND boo)
 
 install(TARGETS boo DESTINATION ${CMAKE_INSTALL_BINDIR})
+
+if(WIN32 OR CYGWIN)
+  # Add location of library to PATH (for DLL).
+  set(new_path "$ENV{PATH};${test_path}")
+
+  if(WIN32)
+    string(REPLACE ";" "\;" new_path "${new_path}")
+  elseif(CYGWIN)
+    string(REPLACE ";" ":" new_path "${new_path}")
+  else()
+    message(FATAL_ERROR "Unreachable")
+  endif()
+
+  set_tests_properties(BooTest PROPERTIES ENVIRONMENT "PATH=${new_path}")
+endif()

@@ -12,15 +12,69 @@
 #   * FOO_BAZ_DEBUG=0/FOO_BAR_DEBUG=0 added on other configurations
 
 ####
-# Set minimum version of CMake. Since command 'project' use
-# VERSION sub-option we need 3.0.
-cmake_minimum_required(VERSION 3.0)
+# Set minimum version of CMake.
+cmake_minimum_required(VERSION 3.9) # GENERATOR_IS_MULTI_CONFIG
 
 ####
 # Set variables:
 #   * PROJECT_NAME
 #   * PROJECT_VERSION
 project(Foo VERSION 1.2.3)
+
+# Debug Information Format:
+# * https://docs.microsoft.com/en-us/cpp/build/reference/z7-zi-zi-debug-information-format
+#
+# Notes:
+#
+# * /Z7 still produce PDB file for DLL and without the PDB file installed
+#   you can't debug DLL
+#
+# * /Z7 for static library doesn't produce PDB. It's the best option if you
+#   want debug library without changing internal CMake code.
+#   Toolchain example: https://github.com/ruslo/polly/blob/master/vs-15-2017-win64-z7.cmake
+#
+# * /Zi option is default (produce separate PDB files)
+#
+# * TARGET_PDB_FILE generator expression doesn't support static libraries.
+#   See https://gitlab.kitware.com/cmake/cmake/issues/16932
+#   (that's why it's not used here)
+#
+# * This code can be implemented as a 'PDB DESTINATION' feature.
+#   See https://gitlab.kitware.com/cmake/cmake/issues/16935#note_275180
+#
+# * By default only Debug/RelWithDebInfo produce debug information,
+#   Release/MinSizeRel do not.
+#
+# * Generated PDB for static libraries doesn't respect CMAKE_<CONFIG>_POSTFIX
+#   variable. It means if you specify Debug and RelWithDebInfo then generated
+#   PDB files for both will be "md5.pdb". When PDB files installed one will
+#   overwrite another making it unusable. Release + Debug configurations will
+#   work fine because Release doesn't produce PDB files.
+
+if(MSVC)
+  set(pdb_output_dir "${CMAKE_CURRENT_BINARY_DIR}/pdb-files")
+
+  set(CMAKE_PDB_OUTPUT_DIRECTORY "${pdb_output_dir}")
+  set(CMAKE_COMPILE_PDB_OUTPUT_DIRECTORY "${pdb_output_dir}")
+
+  get_cmake_property(is_multi GENERATOR_IS_MULTI_CONFIG)
+  if(is_multi)
+    set(config_suffix "$<CONFIG>")
+  else()
+    set(config_suffix "")
+  endif()
+
+  if(BUILD_SHARED_LIBS)
+    set(pdb_dst bin)
+  else()
+    set(pdb_dst lib)
+  endif()
+
+  install(
+      DIRECTORY "${pdb_output_dir}/${config_suffix}/"
+      DESTINATION ${pdb_dst}
+  )
+endif()
 
 ####
 # Create targets

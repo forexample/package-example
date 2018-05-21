@@ -64,10 +64,15 @@ if(MSVC)
     set(config_suffix "")
   endif()
 
+  # Introduce variables:
+  # * CMAKE_INSTALL_LIBDIR
+  # * CMAKE_INSTALL_BINDIR
+  include(GNUInstallDirs)
+
   if(BUILD_SHARED_LIBS)
-    set(pdb_dst bin)
+    set(pdb_dst ${CMAKE_INSTALL_BINDIR})
   else()
-    set(pdb_dst lib)
+    set(pdb_dst ${CMAKE_INSTALL_LIBDIR})
   endif()
 
   install(

@@ -50,6 +50,9 @@ project(Foo VERSION 1.2.3)
 #   PDB files for both will be "md5.pdb". When PDB files installed one will
 #   overwrite another making it unusable. Release + Debug configurations will
 #   work fine because Release doesn't produce PDB files.
+#
+# * All PDB files will be installed, including PDB for targets that will not
+#   be installed themselves.
 
 if(MSVC)
   set(pdb_output_dir "${CMAKE_CURRENT_BINARY_DIR}/pdb-files")

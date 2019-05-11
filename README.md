@@ -19,10 +19,10 @@ Install the project...
 -- Installing: /.../_install/include/foo/Baz.hpp
 -- Installing: /.../_install/include/foo/BAR_EXPORT.h
 -- Installing: /.../_install/include/foo/BAZ_EXPORT.h
--- Installing: /.../_install/lib/cmake/Foo/FooConfig.cmake
--- Installing: /.../_install/lib/cmake/Foo/FooConfigVersion.cmake
--- Installing: /.../_install/lib/cmake/Foo/FooTargets.cmake
--- Installing: /.../_install/lib/cmake/Foo/FooTargets-debug.cmake
+-- Installing: /.../_install/share/Foo/cmake/FooConfig.cmake
+-- Installing: /.../_install/share/Foo/cmake/FooConfigVersion.cmake
+-- Installing: /.../_install/share/Foo/cmake/FooTargets.cmake
+-- Installing: /.../_install/share/Foo/cmake/FooTargets-debug.cmake
 ```
 
 ```bash
@@ -38,10 +38,10 @@ Install the project...
 -- Up-to-date: /.../_install/include/foo/Baz.hpp
 -- Installing: /.../_install/include/foo/BAR_EXPORT.h
 -- Installing: /.../_install/include/foo/BAZ_EXPORT.h
--- Installing: /.../_install/lib/cmake/Foo/FooConfig.cmake
--- Installing: /.../_install/lib/cmake/Foo/FooConfigVersion.cmake
--- Installing: /.../_install/lib/cmake/Foo/FooTargets.cmake
--- Installing: /.../_install/lib/cmake/Foo/FooTargets-release.cmake
+-- Installing: /.../_install/share/Foo/cmake/FooConfig.cmake
+-- Installing: /.../_install/share/Foo/cmake/FooConfigVersion.cmake
+-- Installing: /.../_install/share/Foo/cmake/FooTargets.cmake
+-- Installing: /.../_install/share/Foo/cmake/FooTargets-release.cmake
 ```
 
 Note that:

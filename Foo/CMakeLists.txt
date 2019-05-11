@@ -134,6 +134,7 @@ target_link_libraries(bar PUBLIC baz)
 # * CMAKE_INSTALL_LIBDIR
 # * CMAKE_INSTALL_BINDIR
 # * CMAKE_INSTALL_INCLUDEDIR
+# * CMAKE_INSTALL_DATADIR
 include(GNUInstallDirs)
 
 # Layout. This works for all platforms:

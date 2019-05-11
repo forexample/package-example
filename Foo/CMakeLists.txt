@@ -137,10 +137,10 @@ target_link_libraries(bar PUBLIC baz)
 include(GNUInstallDirs)
 
 # Layout. This works for all platforms:
-#   * <prefix>/lib*/cmake/<PROJECT-NAME>
+#   * <prefix>/share/<PROJECT-NAME>/cmake
 #   * <prefix>/lib*/
 #   * <prefix>/include/
-set(config_install_dir "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}")
+set(config_install_dir "${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME}/cmake")
 
 set(generated_dir "${CMAKE_CURRENT_BINARY_DIR}/generated")
 

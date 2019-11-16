@@ -11,6 +11,10 @@ include(GNUInstallDirs)
 
 set(test_path "")
 
+if(NOT TARGET bar)
+  add_subdirectory(${THIRD_PARTY_TOP_DIR}/Foo ${CMAKE_CURRENT_BINARY_DIR}/__third_party/foo)
+endif()
+
 if(TARGET bar)
   add_library(Foo::bar ALIAS bar)
   list(APPEND test_path "$<TARGET_FILE_DIR:Foo::bar>")

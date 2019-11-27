@@ -11,13 +11,10 @@ include(GNUInstallDirs)
 
 set(test_path "")
 
-if(NOT TARGET bar)
-  add_subdirectory(${THIRD_PARTY_TOP_DIR}/Foo ${CMAKE_CURRENT_BINARY_DIR}/__third_party/foo)
-endif()
-
-if(TARGET bar)
-  add_library(Foo::bar ALIAS bar)
-  list(APPEND test_path "$<TARGET_FILE_DIR:Foo::bar>")
+get_directory_property(my_parent PARENT_DIRECTORY)
+if(my_parent)
+  ##add_library(Foo::bar ALIAS bar)
+  list(APPEND test_path "$<TARGET_FILE_DIR:bar>")
 else()
   find_package(Foo CONFIG REQUIRED)
   message("Foo_DIR: ${Foo_DIR}")
@@ -43,7 +40,7 @@ add_executable(boo boo.cpp)
 # Note:
 # * library Foo::baz will be linked automatically
 # * macro FOO_BAZ_DEBUG will be added automatically (Foo::baz usage requirement)
-target_link_libraries(boo Foo::bar)
+target_link_libraries(boo bar)
 
 # CMAKE_<CONFIG>_POSTFIX has no effect on executable
 # * http://www.cmake.org/Bug/view.php?id=7868

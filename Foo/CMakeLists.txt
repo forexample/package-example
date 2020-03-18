@@ -109,6 +109,8 @@ target_compile_definitions(baz PUBLIC "FOO_BAZ_DEBUG=$<CONFIG:Debug>")
 set(generated_headers "${CMAKE_CURRENT_BINARY_DIR}/generated_headers")
 set(bar_export "${generated_headers}/foo/BAR_EXPORT.h")
 set(baz_export "${generated_headers}/foo/BAZ_EXPORT.h")
+
+# https://cmake.org/cmake/help/v3.9/module/GenerateExportHeader.html
 include(GenerateExportHeader)
 generate_export_header(bar EXPORT_FILE_NAME ${bar_export})
 generate_export_header(baz EXPORT_FILE_NAME ${baz_export})

@@ -51,6 +51,9 @@ Note that:
 * `FooTargets-release.cmake` set `Release` imported target properties, e.g. `IMPORTED_LOCATION_RELEASE`
 * `FooTargets-debug.cmake` set `Debug` imported target properties, e.g. `IMPORTED_LOCATION_DEBUG`
 
+Note:
+* For `-H` see: https://cgold.readthedocs.io/en/latest/glossary/-H.html
+
 ### Boo (use installed Foo)
 
 Easiest way to find and include `FooConfig.cmake` file is to set `CMAKE_INSTALL_PREFIX`:

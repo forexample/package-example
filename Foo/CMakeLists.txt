@@ -1,3 +1,7 @@
+get_filename_component(LIBRARY_NAME "${CMAKE_CURRENT_SOURCE_DIR}" NAME)
+string(REPLACE " " "_" LIBRARY_NAME "${LIBRARY_NAME}")
+string(TOUPPER "${LIBRARY_NAME}" LIBRARY_UPPER_NAME)
+
 # This file creates project 'Foo' with two library targets 'bar' and 'baz'.
 # Target 'bar' depends on 'baz'. After installation this project can be found
 # by 'find_package(... CONFIG)' command:
@@ -19,7 +23,7 @@ cmake_minimum_required(VERSION 3.9) # GENERATOR_IS_MULTI_CONFIG
 # Set variables:
 #   * PROJECT_NAME
 #   * PROJECT_VERSION
-project(Foo VERSION 1.2.3)
+project("${LIBRARY_NAME}" VERSION 1.2.3)
 
 # Debug Information Format:
 # * https://docs.microsoft.com/en-us/cpp/build/reference/z7-zi-zi-debug-information-format
@@ -73,14 +77,14 @@ if(MSVC)
   include(GNUInstallDirs)
 
   if(BUILD_SHARED_LIBS)
-    set(pdb_dst ${CMAKE_INSTALL_BINDIR})
+    set(pdb_dst "${CMAKE_INSTALL_BINDIR}")
   else()
-    set(pdb_dst ${CMAKE_INSTALL_LIBDIR})
+    set(pdb_dst "${CMAKE_INSTALL_LIBDIR}")
   endif()
 
   install(
       DIRECTORY "${pdb_output_dir}/${config_suffix}/"
-      DESTINATION ${pdb_dst}
+      DESTINATION "${pdb_dst}"
   )
 endif()
 

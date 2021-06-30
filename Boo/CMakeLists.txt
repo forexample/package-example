@@ -1,7 +1,11 @@
+get_filename_component(EXEC_NAME "${CMAKE_CURRENT_SOURCE_DIR}" NAME)
+string(REPLACE " " "_" EXEC_NAME ${EXEC_NAME})
+set(TEST_NAME "${EXEC_NAME}Test")
+
 # Since CMake 3.3 'NO_CMAKE_BUILDS_PATH' was removed:
 # * https://cmake.org/cmake/help/latest/release/3.3.html#deprecated-and-removed-features
 cmake_minimum_required(VERSION 3.3)
-project(Boo)
+project("${EXEC_NAME}")
 
 # Introduce variables:
 # * CMAKE_INSTALL_LIBDIR
@@ -34,21 +38,21 @@ elseif(UNIX)
   endif()
 endif()
 
-add_executable(boo boo.cpp)
+add_executable("${EXEC_NAME}" boo.cpp)
 
 # Note:
 # * library Foo::baz will be linked automatically
 # * macro FOO_BAZ_DEBUG will be added automatically (Foo::baz usage requirement)
-target_link_libraries(boo Foo::bar)
+target_link_libraries("${EXEC_NAME}" Foo::bar)
 
 # CMAKE_<CONFIG>_POSTFIX has no effect on executable
 # * http://www.cmake.org/Bug/view.php?id=7868
-set_target_properties(boo PROPERTIES DEBUG_POSTFIX "d")
+set_target_properties("${EXEC_NAME}" PROPERTIES DEBUG_POSTFIX "d")
 
 enable_testing()
-add_test(NAME BooTest COMMAND boo)
+add_test(NAME "${TEST_NAME}" COMMAND "${EXEC_NAME}")
 
-install(TARGETS boo DESTINATION ${CMAKE_INSTALL_BINDIR})
+install(TARGETS "${EXEC_NAME}" DESTINATION "${CMAKE_INSTALL_BINDIR}")
 
 if(WIN32 OR CYGWIN)
   # Add location of library to PATH (for DLL).
@@ -62,5 +66,5 @@ if(WIN32 OR CYGWIN)
     message(FATAL_ERROR "Unreachable")
   endif()
 
-  set_tests_properties(BooTest PROPERTIES ENVIRONMENT "PATH=${new_path}")
+  set_tests_properties("${TEST_NAME}" PROPERTIES ENVIRONMENT "PATH=${new_path}")
 endif()
